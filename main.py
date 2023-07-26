@@ -11,7 +11,6 @@ import shorten
 
 app = FastAPI()
 
-
 @app.get("/")
 async def read_index():
     return FileResponse('public/index.html',media_type='text/html')
@@ -23,7 +22,6 @@ async def shorten_URL(url):
     data.set(token,url)
     short_url = os.path.join(config.host,token)
     return {"message": "success","url":short_url}
-
 
 @app.get("/{shorten_token}")
 async def redirect(shorten_token):
