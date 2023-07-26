@@ -1,7 +1,12 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from fastapi.responses import RedirectResponse
+
+import data
 import shorten
+import os
+import config
 
 app = FastAPI()
 
